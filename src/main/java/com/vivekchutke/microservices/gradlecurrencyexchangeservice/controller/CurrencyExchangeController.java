@@ -25,7 +25,7 @@ public class CurrencyExchangeController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
-    @HystrixCommand(fallbackMethod = "retrieveDefaultExchangeValue")
+//    @HystrixCommand(fallbackMethod = "retrieveDefaultExchangeValue")
     public ExchangeRate retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
         ExchangeRate exchangeRate = exchangeRepository.findByFromAndTo(from, to);
         if(exchangeRate == null) {
@@ -33,7 +33,8 @@ public class CurrencyExchangeController {
         }
         exchangeRate.setPortNumber(Integer.parseInt(environment.getProperty("local.server.port")));
 
-        logger.info("Active Profile are: "+environment.getActiveProfiles());
+        System.out.println("*******#######***** Java Verion: "+environment.getProperty("JBP_CONFIG_OPEN_JDK_JRE"));
+        logger.info("Java Version are: "+environment.getProperty("JBP_CONFIG_OPEN_JDK_JRE"));
         logger.info("**Request: {}", exchangeRate);
         return exchangeRate;
     }
@@ -46,6 +47,7 @@ public class CurrencyExchangeController {
      * @return
      */
     public ExchangeRate retrieveDefaultExchangeValue(String from, String to) {
+        System.out.println("In Fall Back Method Java version: "+environment.getProperty("JBP_CONFIG_OPEN_JDK_JRE"));
 
         ExchangeRate exchangeRate =  new ExchangeRate(100, from, to,new BigDecimal(68.65),  Integer.parseInt(environment.getProperty("local.server.port")));
         return exchangeRate;

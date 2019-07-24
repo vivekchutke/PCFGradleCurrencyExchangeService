@@ -2,14 +2,13 @@ name: CFGradleCurrencyExchangeService
 path: build/libs/gradlecurrencyexchangeservice-0.0.1-SNAPSHOT.jar
 buildpack: https://github.com/cloudfoundry/java-buildpack.git
 memory: 1G
+#disk_quota: 1024M
+#command: AppStart_command
 env:
   spring_jpa_hibernate_ddl-auto: create
   spring.security.user.name: ${vcap.services.my-cfcups-service.credentials.username:admin}
   spring.security.user.password: ${vcap.services.my-cfcups-service.credentials.password:password}
-
 services:
   - myEurekaServiceRegistry
   - mySqlServer
   - my-cfcups-service
-
-

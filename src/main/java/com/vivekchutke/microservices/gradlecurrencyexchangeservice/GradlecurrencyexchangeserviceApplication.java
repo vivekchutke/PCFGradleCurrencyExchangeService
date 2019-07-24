@@ -20,6 +20,11 @@ public class GradlecurrencyexchangeserviceApplication {
 		SpringApplication.run(GradlecurrencyexchangeserviceApplication.class, args);
 	}
 
+	/**
+	 * This method is used for sleuth to capture common logging across calls
+	 *
+	 * @return
+	 */
 	@Bean
 	public Sampler defaultSampler() {
 		return Sampler.ALWAYS_SAMPLE;

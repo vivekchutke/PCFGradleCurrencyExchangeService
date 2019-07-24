@@ -34,3 +34,9 @@ out/
 ## Ignore class path dependencies and jar files
 /build/libs/
 
+## Ignore Classes
+/build/classes
+
+## Ignore everthing in build
+/build
+/out
