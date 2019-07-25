@@ -14,7 +14,7 @@ configurations {
 	runtimeClasspath {
 		extendsFrom developmentOnly
 	}
-}
+}                                                                     
 
 repositories {
 	mavenCentral()
@@ -45,7 +45,8 @@ dependencies {
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-
+	// https://mvnrepository.com/artifact/io.pivotal.spring.cloud/spring-cloud-services-starter-config-client
+	compile group: 'io.pivotal.spring.cloud', name: 'spring-cloud-services-starter-config-client', version: '2.1.4.RELEASE'
 }
 
 dependencyManagement {

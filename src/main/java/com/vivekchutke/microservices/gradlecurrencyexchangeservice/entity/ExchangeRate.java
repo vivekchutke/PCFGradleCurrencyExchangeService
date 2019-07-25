@@ -19,6 +19,12 @@ public class ExchangeRate {
 
     private int portNumber;
 
+    @Transient
+    private String propertyValueFromGitMinimum;
+
+    @Transient
+    private String propertyValueFromGitMaximun;
+
     public ExchangeRate() {
 
     }
@@ -80,6 +86,22 @@ public class ExchangeRate {
 
     public void setPortNumber(int portNumber) {
         this.portNumber = portNumber;
+    }
+
+    public String getPropertyValueFromGitMinimum() {
+        return propertyValueFromGitMinimum;
+    }
+
+    public void setPropertyValueFromGitMinimum(String propertyValueFromGitMinimum) {
+        this.propertyValueFromGitMinimum = propertyValueFromGitMinimum;
+    }
+
+    public String getPropertyValueFromGitMaximun() {
+        return propertyValueFromGitMaximun;
+    }
+
+    public void setPropertyValueFromGitMaximun(String propertyValueFromGitMaximun) {
+        this.propertyValueFromGitMaximun = propertyValueFromGitMaximun;
     }
 }
 

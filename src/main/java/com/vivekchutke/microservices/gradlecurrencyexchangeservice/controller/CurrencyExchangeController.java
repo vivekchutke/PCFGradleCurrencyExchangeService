@@ -1,6 +1,7 @@
 package com.vivekchutke.microservices.gradlecurrencyexchangeservice.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.vivekchutke.microservices.gradlecurrencyexchangeservice.config.ConfigServerProperties;
 import com.vivekchutke.microservices.gradlecurrencyexchangeservice.entity.ExchangeRate;
 import com.vivekchutke.microservices.gradlecurrencyexchangeservice.exception.ExchangeServiceException;
 import com.vivekchutke.microservices.gradlecurrencyexchangeservice.repository.ExchangeRepository;
@@ -22,6 +23,10 @@ public class CurrencyExchangeController {
     @Autowired
     private ExchangeRepository exchangeRepository;
 
+    @Autowired
+    private ConfigServerProperties configServerProperties;
+
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
@@ -33,9 +38,13 @@ public class CurrencyExchangeController {
         }
         exchangeRate.setPortNumber(Integer.parseInt(environment.getProperty("local.server.port")));
 
-        System.out.println("*******#######***** Java Verion: "+environment.getProperty("JBP_CONFIG_OPEN_JDK_JRE"));
-        logger.info("Java Version are: "+environment.getProperty("JBP_CONFIG_OPEN_JDK_JRE"));
         logger.info("**Request: {}", exchangeRate);
+
+        logger.info("Config value from Git: Maximum Value is:"+configServerProperties.getMaximum());
+        logger.info("Config value from Git: Minimum Value is:"+configServerProperties.getMinimum());
+
+        exchangeRate.setPropertyValueFromGitMaximun(configServerProperties.getMaximum());
+        exchangeRate.setPropertyValueFromGitMinimum(configServerProperties.getMinimum());
         return exchangeRate;
     }
 

@@ -1,0 +1,10 @@
+{
+  "git": {
+    "uri": "https://github.com/vivekchutke/PropRepoForExchangeConversionService.git",
+    "username": "vivekchutke@gmail.com",
+    "password": "Chinnuda123",
+    "cloneOnStart": "true",
+    "searchPaths": "/"
+  },
+  "count": 1
+}
