@@ -8,9 +8,10 @@ env:
   spring_jpa_hibernate_ddl-auto: create
   spring.security.user.name: ${vcap.services.my-cfcups-service.credentials.username:admin}
   spring.security.user.password: ${vcap.services.my-cfcups-service.credentials.password:password}
-  SPRING_PROFILES_ACTIVE: dev
+  SPRING_PROFILES_ACTIVE: qa
 services:
   - myEurekaServiceRegistry
   - mySqlServer
   - my-cfcups-service
   - myConfigurationServer
+  - currency_exchange_conversion_service-logdrain

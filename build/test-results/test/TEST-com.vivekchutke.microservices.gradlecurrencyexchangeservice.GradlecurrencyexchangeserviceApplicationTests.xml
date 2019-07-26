@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.vivekchutke.microservices.gradlecurrencyexchangeservice.GradlecurrencyexchangeserviceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-25T19:15:56" hostname="Admins-MBP.attlocal.net" time="0.0">
+<testsuite name="com.vivekchutke.microservices.gradlecurrencyexchangeservice.GradlecurrencyexchangeserviceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-25T21:15:16" hostname="Admins-MBP.attlocal.net" time="0.001">
   <properties/>
-  <testcase name="contextLoads" classname="com.vivekchutke.microservices.gradlecurrencyexchangeservice.GradlecurrencyexchangeserviceApplicationTests" time="0.0"/>
+  <testcase name="contextLoads" classname="com.vivekchutke.microservices.gradlecurrencyexchangeservice.GradlecurrencyexchangeserviceApplicationTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
